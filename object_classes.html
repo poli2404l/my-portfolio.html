@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Account App</title>
+</head>
+<body>
+
+    <h2>Bank Account System</h2>
+
+    <p><strong>Account Holder:</strong> <span id="holder"></span></p>
+    <p><strong>Account Number:</strong> <span id="number"></span></p>
+    <p><strong>Balance:</strong> ₹<span id="balance"></span></p>
+
+    <hr>
+
+    <h3>Deposit Money</h3>
+    <input type="number" id="depositAmount" placeholder="Enter amount">
+    <button onclick="depositMoney()">Deposit</button>
+
+    <h3>Withdraw Money</h3>
+    <input type="number" id="withdrawAmount" placeholder="Enter amount">
+    <button onclick="withdrawMoney()">Withdraw</button>
+
+    <p id="message" style="color:blue;"></p>
+
+<script>
+
+// Deposit function connected to button
+function depositMoney() {
+    let amount = Number(document.getElementById("depositAmount").value);
+    bankAccount.deposit(amount);
+}
+
+// Withdraw function connected to button
+function withdrawMoney() {
+    let amount = Number(document.getElementById("withdrawAmount").value);
+    bankAccount.withdraw(amount);
+}
+
+let bankAccount = {
+    accountHolder: "Deepthi",
+    accountNumber: 123456789,
+    balance: 5000,
+
+    deposit: function(amount) {
+        this.balance += amount;
+        updateDisplay();
+        showMessage("Deposited ₹" + amount);
+    },
+
+    withdraw: function(amount) {
+        if (amount <= this.balance) {
+            this.balance -= amount;
+            updateDisplay();
+            showMessage("Withdrawn ₹" + amount);
+        } else {
+            showMessage("Insufficient Balance!");
+        }
+    }
+};
+3
+
+// Display initial details
+function updateDisplay() {
+    document.getElementById("holder").innerText = bankAccount.accountHolder;
+    document.getElementById("number").innerText = bankAccount.accountNumber;
+    document.getElementById("balance").innerText = bankAccount.balance;
+}
+
+// Show messages
+function showMessage(text) {
+    document.getElementById("message").innerText = text;
+}
+
+// Load data when page opens
+updateDisplay();
+
+</script>
+
+</body>
+</html>

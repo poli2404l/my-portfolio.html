@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translator App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #status {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🌍 Language Translator</h2>
+
+    <textarea id="inputText" placeholder="Enter English text"></textarea>
+
+    <select id="targetLang">
+        <option value="te">Telugu</option>
+        <option value="hi">Hindi</option>
+        <option value="ta">Tamil</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+    </select>
+
+    <button onclick="translateText()">Translate</button>
+
+    <textarea id="outputText" readonly placeholder="Translation appears here"></textarea>
+
+    <p id="status"></p>
+</div>
+
+<script>
+async function translateText() {
+
+    let input = document.getElementById("inputText").value.trim();
+    let target = document.getElementById("targetLang").value;
+    let status = document.getElementById("status");
+
+    if (input === "") {
+        status.style.color = "red";
+        status.innerHTML = "Please enter text!";
+        return;
+    }
+
+    status.style.color = "black";
+    status.innerHTML = "Translating...";
+
+    try {
+
+        let url = "https://api.mymemory.translated.net/get?q=" +
+            encodeURIComponent(input) +
+            "&langpair=en|" + target;
+
+        let response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("Translation failed");
+        }
+
+        let data = await response.json();
+
+        let translated = data.responseData.translatedText;
+
+        document.getElementById("outputText").value = translated;
+
+        status.style.color = "green";
+        status.innerHTML = "Translation Done ✔";
+
+    } catch (error) {
+
+       status.innerHTML="Error: "+error.message;
+       console.error(error);
+    }
+}
+</script>
+
+</body>
+</html>

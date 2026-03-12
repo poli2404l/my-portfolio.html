@@ -1,0 +1,21 @@
+#header{
+    
+    background-image: url('');
+background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0px;
+  padding: 0px;
+  border-color: blue
+}
+.overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: blue;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+.section{
+    background-
+}

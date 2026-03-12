@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+    <body>
+        <a href="callbackfunc.html">
+            <button>Go to Next Page</button>
+        </a><br><br>
+
+        <button onclick="openPAGE()">LOGIN</button><br><br>
+
+        <button onclick="opennewpage()">Create</button>
+
+        <button onclick="window.open('arraymethods1.html')">
+            Open in New Tab
+        </button><br><br> //window.open() method is used to open a new window or tab in the browser.
+
+        <img src="xyz.jpg"            
+        width=50px height=50px onclick="openPage()"
+            style="cursor:pointer;">
+
+        <img src="xyz.png"
+            width=50px height=50px onclick="opengooglepage()"
+        style="cursor:pointer;">
+
+<script>
+function openPage() {
+    window.location.href = "numberliterals.html";
+}
+
+function opengooglepage() {
+    window.location.href = "https://www.google.com";
+}
+
+function openPAGE() {
+    window.location.href = "oninput.html";
+}
+function opennewpage() {
+    open("oninput2.html");
+}
+</script>
+    </body>
+</html>

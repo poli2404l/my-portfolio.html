@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form onsubmit="checkLogin(event)">
+            <input type="=text" id="user">
+            <button tupe="submit">Login</button>
+        </form>
+        <script>
+            function checkLogin(e){
+                e.preventDefault();
+                if(user.value === ""){
+                    alert("Useername required!");
+                } else{
+                    alert("Login Successfull!");
+                }
+            }
+        </script>
+    </body>
+</html>

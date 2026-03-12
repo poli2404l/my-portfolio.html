@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            if(true)
+        {
+            var a=10;
+            let b=40;
+            console.log(b);
+        }
+        console.log(a); // 10
+        console.log(b); // ReferenceError: b is not defined
+        </script>
+
+        <p> we get reference error because let is block specific, var is function specific. So using let is more safe
+             var ignores block { }.works only inside the block.</p>
+
+<script>
+            var x = 5;
+            var x = 10;   // Allowed (but confusing)
+            let y = 5;
+            y = 10;   // Allowed
+            //let y = 10;   //  Error
+            //var can be re-declared and updated. let can be updated but not re-declared.
+            console.log(x); // 10
+            console.log(y); // 10
+
+// let creates a new scope for each iteration of the loop, so it logs 1, 2, and 3. var does not create a new scope, so it logs 4 three times (the final value of i after the loop).
+//That is why using let is recommended in loops to avoid such issues with closures and asynchronous code.
+
+                const age = 20;
+                //age = 25;   // Error: Assignment to constant variable.
+                //const age = 30;   // Error: Identifier 'age' has already been declared.
+                //const cannot be updated or re-declared. It must be initialized at the time of declaration. It is block-scoped like let. It is used for values that should not change throughout the program, providing immutability and preventing accidental reassignment.
+                console.log(age); // 20
+
+</script>
+                
+    </body>

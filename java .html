@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Studnet Results</title>
+    </head>
+    <body>
+        <h2>Studnet Result Calculator</h2>
+        <form>
+            <label>Student Name:</label>
+            <input type="text" id="name"><br><br>
+            <label>Number of subjects:</label>
+            <input type="number" id="subjects"><br><br>
+            <button type="button" onclick="calculateResult()">Calculate Result</button> 
+        </form>
+        <script>
+            function calculateResult() {
+                let name = document.getElementById("name").value;
+                let subjects = parseInt(document.getElementById("subjects").value);
+                let total = 0;
+                let i = 1;
+                do{
+                    let mark = parseInt(prompt("Enter marks for subject" +i));
+                    total = total+mark;
+                    i++;
+                } while(i<=subjects);
+            let result;
+            if(average>=40) {
+                result="Pass";
+            } else{
+                result="Fail";
+            }
+            }
+            //for loop(display subject numbers)
+            let subjectlist="";
+            for(let j=1;j<=subjects;j++){
+                subjectlist+="subject"+j+"";
+            }
+            let  count=1;
+            let message="";
+            which(count<=1){
+                message="Result  generated successfullyl";
+                 count++;
+            }
+            "average:"+average+"<br>"+
+            "result:"+result+<br>+
+        </script>
+    </body>

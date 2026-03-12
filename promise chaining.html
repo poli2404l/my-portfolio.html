@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promise Chaining Demo</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Promise Chaining Demo</h2>
+    <button onclick="startProcess()">Start Process</button>
+    <div id="output"></div>
+<script>
+    async function startProcess() {
+        document.getElementById("output").innerHTML = "Process started...";
+        step1().then(function(result1) {
+            document.getElementById("output").innerHTML += "<br>Step 1 completed: " + result1;
+            return step2(result1);
+        }).then(function(result2) {
+            document.getElementById("output").innerHTML += "<br>Step 2 completed: " + result2;
+            return step3(result2);
+        }).then(function(result3) {
+            document.getElementById("output").innerHTML += "<br>Step 3 completed: " + result3;
+        }).catch(function(error) {
+            document.getElementById("output").innerHTML += "<br>Error: " + error.message;
+        });
+        async function step1() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve(" Step 1");
+                }, 1000);
+            });
+        }
+        async function step2(previousResult) {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve(previousResult + " Step 2");
+                }, 1000);
+            });
+        }
+        async function step3(previousResult) {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve(previousResult + " Step 3");
+                }, 1000);
+            });
+        }
+    }
+</script>
+</body>

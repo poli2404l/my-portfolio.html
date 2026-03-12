@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>student Marks Analaysis</h2>
+    <p id ="output"></p>
+    <script>
+        let student=[
+            {
+                name :"ravi",marks:35
+            },
+            {name:"sita",marks:60},
+            {
+                name:"meena",marks:50
+            },
+            {name:"arjun",marks:40},
+        ];
+        let updatedMarks=student.map(function(student){
+            return{
+                name:student.name,
+                marks:student.marks+5
+            };
+        } );
+        let passedStudent=updatedMarks.filter(function(student){
+            returnStudent.marks>=40;
+        } );
+        let totalmarks=updatedMarks.reduce(function(total,student){
+            return total+student.marks;
+        },0
+    );
+    averageMarks=totalmarks/student.length;
+    </script>
+</body>
+</html>

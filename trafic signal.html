@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights</title>
+    <style>
+        .light {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: gray;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>Traffic Lights</h2>
+    <div class="light" id="redLight"></div>
+    <div class="light" id="yellowLight"></div>
+    <div class="light" id="greenLight"></div>
+    <br>
+    <button class="redbtn">Red Light</button>
+    <button class="yellowbtn">Yellow Light</button>
+    <button class="greenbtn">Green Light</button>
+    <script>
+        let redButton = document.querySelector(".redbtn");
+        let yellowButton = document.querySelector(".yellowbtn");
+        let greenButton = document.querySelector(".greenbtn");
+        let redLight = document.querySelector("#redLight");
+        let yellowLight = document.querySelector("#yellowLight");
+        let greenLight = document.querySelector("#greenLight");
+
+        redButton.addEventListener("click", function() {
+            redLight.style.backgroundColor = "red";
+            yellowLight.style.backgroundColor = "gray";
+            greenLight.style.backgroundColor = "gray";
+        });
+
+        yellowButton.addEventListener("click", function() {
+            redLight.style.backgroundColor = "gray";
+            yellowLight.style.backgroundColor = "yellow";
+            greenLight.style.backgroundColor = "gray";
+        });
+
+        greenButton.addEventListener("click", function() {
+            redLight.style.backgroundColor = "gray";
+            yellowLight.style.backgroundColor = "gray";
+            greenLight.style.backgroundColor = "green";
+        });
+    </script>
+</body>
+</html>

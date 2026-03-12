@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="marks">
+    <button onclick="checkResult()">Check Result</button>
+    <p id="result"></p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <script>
+        function checkResult(){
+            let inputValue = document.getElementById("marks").value;
+            if(inputValue === "" || isNaN(inputValue)){
+                alert("Please enter a valid number");
+                return;
+            }
+            let marks = parseInt(inputValue);
+            let result = (marks >= 40) ? "Pass" : "Fail";
+            document.getElementById("result").innerHTML = "Result: " + result;
+
+            // Ternary operator with multiple conditions
+            let grade = (marks >= 90) ? "A" :
+                        (marks >= 80) ? "B" :
+                        (marks >= 70) ? "C" :
+                        (marks >= 60) ? "D" : "F";
+            document.getElementById("output1").innerHTML = "Grade: " + grade;
+
+            // Ternary operator with nested conditions
+            let feedback = (marks >= 90) ? "Excellent!" :
+                           (marks >= 80) ? "Good job!" :
+                           (marks >= 70) ? "Fair effort." :
+                           (marks >= 60) ? "Needs improvement." : "Better luck next time.";
+            document.getElementById("output2").innerHTML = "Feedback: " + feedback;
+
+            // Ternary operator for pass/fail with a message
+            let passFailMessage = (marks >= 40) ? "Congratulations, you passed!" : "Unfortunately, you failed. Please try again.";
+            document.getElementById("output3").innerHTML = passFailMessage;
+        }
+    </script>
+</body>
+</html>

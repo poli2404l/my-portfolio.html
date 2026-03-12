@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Google Search</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            width: 300px;
+            padding: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 300px;
+            margin: auto;
+            text-align: left;
+        }
+
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mini Search Suggestion</h2>
+    <input type="text" id="searchBox" placeholder="Type something....">
+    <ul id="suggestions"></ul>
+    <script>
+        const data = [
+            "Java",
+            "Java Script",
+            "Python",
+            "C Program",
+            "C++",
+            "Data Structures",
+            "DA",
+            "HTML",
+            "CSS",
+            "React",
+            "Nodels",
+            "Data Science"
+    ];
+    document.getElementById("searchBox").addEventListener("input",async function () {
+        let query = this.value;
+        let suggestionList = document.getElementById("suggestions");
+        suggestionList.innerHTML = "";
+        if(query === "")return;
+        let currentQurey = query;
+        let results = await fetchSuggestions(query);
+        //prevent old results from showing
+        if(document.getElementById("searchBox").value !== currentQurey){
+            return;
+        }
+results.forEach(item => {
+    let li = document.createElement("li");
+    li.textContent =  item;
+    suggestionList.appendChild(li);
+    li.addEventListener("click",function() {
+        document.getElementById("searchBox").value = item;
+        suggestionList.innerHTML = "";
+    });
+});
+    
+
+    })
+    async function fetchSuggestions(query) {
+        return new Promise((resolve)=>{
+            setTimeout(() => {
+                const filtered = data.filter(item => 
+                    item.toLowerCase().includes(query.toLowerCase())
+                );
+                resolve(filtered);
+            },500); //simulate network delay
+        });
+    }
+    </script>
+</body>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* ---------- BASIC PAGE STYLE ---------- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+}
+
+/* ---------- 3.1.1 :hover ---------- */
+.btn {
+  background-color: steelblue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: darkblue;
+}
+
+/* ---------- 3.1.2 :focus ---------- */
+input {
+  padding: 8px;
+  margin-top: 10px;
+}
+
+input:focus {
+  border: 5px solid green;
+  outline: none;
+}
+
+/* ---------- 3.1.3 :nth-child ---------- */
+.list li:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.list li:nth-child(even) {
+  background-color: #d9edf7;
+}
+
+.list li:nth-child(3){
+  color: red
+}
+
+/* ---------- 3.2.1 line-height ---------- */
+.paragraph {
+  line-height: 40;
+}
+
+/* ---------- 3.2.2 font-weight ---------- */
+.light {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Chapter 3: CSS Selectors and Typography</h2>
+
+<!-- :hover -->
+<h3>1. :hover Example</h3>
+<button class="btn">Hover over me</button>
+
+<!-- :focus -->
+<h3>2. :focus Example</h3>
+<input type="text" placeholder="Click here and type">
+
+<!-- :nth-child -->
+<h3>3. :nth-child Example</h3>
+<ul class="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+</ul>
+
+<!-- line-height -->
+<h3>4. line-height Example</h3>
+<p class="paragraph">
+  This paragraph demonstrates the use of line-height property.
+  Increased line-height improves readability of text, especially
+  when the paragraph contains multiple lines of content.
+</p>
+
+<!-- font-weight -->
+<h3>5. font-weight Example</h3>
+<p class="light">This text is light weight</p>
+<p class="bold">This text is bold</p>
+
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulated Server with Array</title>
+</head>
+<body>
+
+<h2>Student Marks Check</h2>
+
+<input type="text" id="username" placeholder="Enter username">
+<button onclick="login()">Details</button>
+
+<p id="output"></p>
+
+<script>
+
+// Simulated server database (Array)
+let students = [
+    { username: "ram", marks: 85 },
+    { username: "sita", marks: 92 },
+    { username: "john", marks: 35 }
+];
+
+function login() {
+
+    let inputName = document.getElementById("username").value;
+
+    // Create Promise (simulate server delay)
+    let loginPromise = new Promise(function(resolve, reject) {
+
+        setTimeout(function() {
+
+            // Search inside array
+            let student = students.find(function(s) {
+                return s.username === inputName;
+            });
+
+            if (student) {
+                resolve("Welcome " + student.username + 
+                        " | Marks: " + student.marks);
+            } else {
+                reject("User not found");
+            }
+
+        }, 1000);  // simulate 1 second server delay
+
+    });
+
+    // Handle response
+    loginPromise
+        .then(function(message) {
+            document.getElementById("output").innerHTML = message;
+        })
+        .catch(function(error) {
+            document.getElementById("output").innerHTML = error;
+        });
+}
+
+</script>
+
+</body>
+</html>

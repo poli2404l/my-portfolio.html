@@ -1,0 +1,53 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>All DOM Selectors Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="mainTitle">College Portal</h2>
+
+    <p class="info">Computer Science Department</p>
+    <p class="highlight">Electronics Department</p>
+
+    <p>General Notice</p>
+
+    <input type="text" name="studentName" placeholder="Enter Name">
+    <input type="text" name="studentName" placeholder="Enter Roll Number">
+
+    <br><br>
+    <button onclick="selectElements()">Test All Selectors</button>
+    <script>
+        function selectElements() {
+            // Select by ID
+            let title = document.getElementById('mainTitle');
+            title.style.color = 'blue';
+            // Select by Class Name 1
+            let departments = document.getElementsByClassName('info');
+            departments[0].style.color = 'green';
+            // Select by Class Name 2
+            let highlights = document.getElementsByClassName('highlight');
+            highlights[0].style.fontWeight = 'bold';
+            // Select by Tag Name
+            let paragraphs = document.getElementsByTagName('p');
+            paragraphs[2].style.fontStyle = 'italic';
+            // Select by Name
+            let nameFields = document.getElementsByName('studentName');
+            nameFields[0].value='SALAAR';
+            // Select by Query Selector
+            let firstinfo = document.querySelector('.info');
+            firstinfo.classList.add('highlight');
+            // Select by Query Selector All
+            let allinfo = document.querySelectorAll('.info');
+            allinfo.forEach(function(item){    
+                item.style.textDecoration = 'underline';
+            });
+        }
+    </script>
+</body>
+</html>

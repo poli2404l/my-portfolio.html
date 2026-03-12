@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Storage Example</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Browser Storage</h1>
+    <input type="text" id="dataInput" placeholder="Enter some data"> <br>
+    <button onclick="saveLocalData()">Save to Local Storage</button>
+    <button onclick="loadLocalData()">Load from Local Storage</button> <br>
+    <button onclick="saveSessionData()">Save to Session Storage</button>
+    <button onclick="loadSessionData()">Load from Session Storage</button> <br>
+    <button onclick="clearData()">Clear Storage</button>
+    <div id="output"></div>
+
+    <script>
+        function saveLocalData() {
+            const data = document.getElementById('dataInput').value;
+            localStorage.setItem('myData', data);
+            document.getElementById('output').innerText = 'Data saved to local storage!';
+        }
+
+        function loadLocalData() {
+            const data = localStorage.getItem('myData');
+            if (data) {
+                document.getElementById('output').innerText = 'Loaded data: ' + data;
+            } else {
+                document.getElementById('output').innerText = 'No data found in local storage.';
+            }
+        }
+
+        function saveSessionData() {
+            const data = document.getElementById('dataInput').value;
+            sessionStorage.setItem('mySessionData', data);
+            document.getElementById('output').innerText = 'Data saved to session storage!';
+        }
+
+        function loadSessionData() {
+            const data = sessionStorage.getItem('mySessionData');
+            if (data) {
+                document.getElementById('output').innerText = 'Loaded data: ' + data;
+            } else {
+                document.getElementById('output').innerText = 'No data found in session storage.';
+            }
+        }
+
+        function clearData() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.getElementById('output').innerText = 'Storage cleared!';
+        }
+    </script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Click The following Text to see the effect</p>
+  <p id="para">Click me</p>
+  <button id="button">cilck button</button>
+  <script>
+    document.getElementById("para").onclick = function(){
+      fun();
+    };
+    document.getElementById("button").onclick = function(){
+      fun1();
+    };
+    function fun(){
+      para.innerHTML = "Welcome to World";
+      para.style.color = "blue";
+      para.style.backgroundColor = "yellow";
+      para.style.fontSize = "25px";
+      para.style.border = "4px solid red";
+    }
+    function fun1(){
+        document.getElementById("button").style.color="green";
+    }
+  </script>  
+</body>
+</html>

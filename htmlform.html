@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form>
+            Enter your name <br>
+            <input type="text" name="username"> <br><hr>
+            First Name:<input type="text" name="First name"/> <br>
+            Last Name:<input type="text" name="Last name"/> <br>
+            <label for="firstname">First Name</label> 
+                <input type="text" id="firstname" name="firstname"/> <br/>
+            <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname"/> <br/> <hr>
+            Enter your address:<br>
+            <textarea rows="2" cols="20"></textarea><hr>
+            <label for="password">Password</label>
+                <input type="password" id="password" name="password"/><hr>
+            <label for="email">Email: </label>
+                <input type="email" id="email" name="email"/><hr>
+            <label for="gender">Gender</label>
+                <input type="radio" id="gender" name="gender" value="male"/>Male
+                <input type="radio" id="gender" name="gender" value="female"/>female <hr>
+            <input type="checkbox" id="cricket" name="cricket" value="cricket">
+                <label for="cricket">Cricket</label> <br>
+            <input type="checkbox" id="football" name="football" value="football">
+                <label for="football">football</label> <br>
+            <input type="checkbox" id="hockey" name="hockey" value="hockey">
+                <label for="hockey">hockey</label> <br> <hr>
+            <select>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+</select> <hr>
+            <input type="submit" value="submit">
+        </form> <hr>
+        <form>
+            <fieldset>
+                <legend>User Information:</legend>
+            <label for="name">Enter name</label> <br>
+        <input type="text" id="name" name="name"> <br>
+        <label for="pass">Enter password</label> <br>
+        <input type="password" id="pass" name="pass"> <br>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+            </fieldset>
+        </form><hr>
+        <form>
+            <input type="button" value="click me" onclick="alert('you are learning HTML')">
+        </form> <hr>
+        <form>
+            <label> user id :</label><br>
+            <input type="text" name="name"><br><br>
+            <input type="image"alt="submit"src="5.jpeg" width="100px">
+        </form><hr>
+        <form>
+            pick your favorite color:<br><br>
+            <input type="color"name="upclick" value="#a52a2a">upclick<br><br>
+            <input type="color"name="downclick" value="#f5f5dc">downclick<br><br>
+        </form>
+        <p><strong>note:The defeult vale is #000000(black).It only supports color selection.</strong></p>
+        <hr>
+        <form>
+            select start and end Date:<br> <br>
+            <input type="week" name="startdata">:Start date<br><br>
+             <input type="week"name="startdata">:End date<br><br>
+            <input type="submit">
+        </form><hr>
+        <form>
+            <label>
+                Select the meeting schedule:<br>
+                <input type="datetime-local" name="meeting"><br>
+            </label>
+              <input type="submit">
+        </form><hr>
+    
+        <form>
+            <label>enter your age:</label>
+            <input type="number" name="num" min="18" max="40"><br><br>
+            <Label><b>Enter your Telephone Number(in format of xxx-xxx-xxx):</b></Label>
+            <input type="text" name="Telephone" pattern="[0-9]{4}"required><br>
+            <input type="submit"><br><br>
+            <Label><b>Enter your Number(in format of A-Za-z):</b></Label>
+            <input type="text" pattern="[A-Za-z]="only letter><required>
+            <input type="submit"><br><br>
+        </form><hr>
+        <from>
+            <label>Enter your Email-address</label><br>
+            <input type="text" name="uname"autofocus><br><br>
+            <label> ENTER YOUR PASSWORD </label><br><br>
+            <input type="password" name="password"required><br><br>
+            <input type="submit"value="login">
+        </from><hr>
+        <form>
+            <label>Password:</label>
+            <input type="password" minlength="6 maxlength="12" required><br>
+            <input type="submit"><br><br>
+        </form><hr>
+    </body>

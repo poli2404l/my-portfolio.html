@@ -1,0 +1,50 @@
+.head{
+    color: whitesmoke;
+    text-align: center;
+        background-image: url("image.png");
+    background-repeat:  no-repeat;
+    background-size: cover;
+    background-position: center ;
+    background-attachment: fixed ;
+    margin: 0px;
+    padding: 0px;
+    border: 2px blue;
+}
+h2{
+    text-align: center;
+}
+
+menuitem{
+    text-align: center;
+    border: 2px solid black;
+
+    padding: 12px
+}
+.overlay{
+    background-color:rgba(255, 255, 255, 0.6);
+    color:blue;
+    padding:0px;
+    margin:0px;
+    text-align: center;
+}
+.section{
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 35px;
+    border-radius: 6px;
+}
+.content{
+    border: 2px  violet;
+    margin: 5px;
+    padding: 10px;
+}
+.left{
+    float: left;
+    width: 30%;
+}
+.right{
+    float: right;
+    width: 30%;
+    padding-right: 0px;
+    margin-right:0px ;
+}

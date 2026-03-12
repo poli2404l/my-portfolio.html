@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Theme Selector</h2>
+<select onchange="changeTheme(this.value)">
+    <option value="white">White</option>
+    <option value="lightblue">Blue</option>
+    <option value="green">Green</option>
+    <option value="pink">Pink</option>
+</select>
+
+<script>
+function changeTheme(color) {
+    document.body.style.backgroundColor = color;
+}
+</script>
+<body>
+</html>

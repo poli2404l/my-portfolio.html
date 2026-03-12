@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listener Examples</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input, button {
+            padding: 8px;
+            margin: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        #hoverBox {
+            width: 150px;
+            height: 50px;
+            background-color: lightgreen;
+            margin: 10px auto;
+            line-height: 50px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Event Listener & setTimeout Demo</h2>
+
+    <!-- Click Event -->
+    <button id="clickBtn">Click Me!</button>
+    <p id="clickOutput"></p>
+
+    <!-- Input Event -->
+    <input type="text" id="inputBox" placeholder="Type here...">
+    <p id="inputOutput"></p>
+
+    <!-- Change Event -->
+    <select id="colorSelect">
+        <option value="">Select color</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="orange">Orange</option>
+    </select>
+    <p id="colorOutput"></p>
+
+    <!-- Submit Event -->
+    <form id="myForm">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="formOutput"></p>
+
+    <!-- Hover Event with setTimeout -->
+    <div id="hoverBox">Hover Over Me</div>
+    <p id="hoverOutput"></p>
+
+    <script>
+        // CLICK event
+        const clickBtn = document.getElementById("clickBtn");
+        const clickOutput = document.getElementById("clickOutput");
+
+        clickBtn.addEventListener("click", function() {
+            clickOutput.textContent = "Button clicked!";
+        });
+
+        // INPUT event
+        const inputBox = document.getElementById("inputBox");
+        const inputOutput = document.getElementById("inputOutput");
+
+        inputBox.addEventListener("input", function() {
+            inputOutput.textContent = "You typed: " + inputBox.value;
+        });
+
+        // CHANGE event
+        const colorSelect = document.getElementById("colorSelect");
+        const colorOutput = document.getElementById("colorOutput");
+
+        colorSelect.addEventListener("change", function() {
+            colorOutput.textContent = "You selected: " + colorSelect.value;
+        });
+
+        // SUBMIT event
+        const myForm = document.getElementById("myForm");
+        const formOutput = document.getElementById("formOutput");
+
+        myForm.addEventListener("submit", function(e) {
+            e.preventDefault(); // prevent page reload
+            formOutput.textContent = "Form submitted! Hello " + document.getElementById("nameInput").value;
+        });
+
+        // HOVER event with setTimeout
+        const hoverBox = document.getElementById("hoverBox");
+        const hoverOutput = document.getElementById("hoverOutput");
+
+        hoverBox.addEventListener("mouseenter", function() {
+            hoverOutput.textContent = "Wait for mouse position... wait 2 sec";
+            setTimeout(() => {
+                hoverOutput.textContent = "Mouse is still hovering!";
+            }, 2000); // 2 seconds delay
+        });
+
+        hoverBox.addEventListener("mouseleave", function() {
+            hoverOutput.textContent = "Mouse left the box!";
+        });
+
+    </script>
+
+</body>
+</html>

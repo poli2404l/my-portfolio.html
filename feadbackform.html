@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Feedback System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 600px;
+            margin: 40px auto;
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .header {
+            background-color: #1f3c88;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        h3 {
+            margin: 20px;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .submit {
+            background-color: #1f3c88;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .reset {
+            padding: 10px 30px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            color: #555;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h2>College Feedback System</h2>
+        <p>KLH University Hyderabad</p>
+    </div>
+
+    <h3>Feedback Form</h3>
+
+    <form>
+        <label>Name</label>
+        <input type="text" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="email" placeholder="abc@gmail.com">
+
+        <label>Department</label>
+        <select>
+            <option>Select</option>
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+        </select>
+
+        <label>Rating</label>
+        <select>
+            <option>Select</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+        </select>
+
+        <label>Comments</label>
+        <textarea placeholder="Write your feedback"></textarea>
+
+        <div class="buttons">
+            <button class="submit" type="submit">Submit</button>
+            <button class="reset" type="reset">Reset</button>
+        </div>
+    </form>
+
+    <div class="footer">
+        copyright © 2026 KLH University Hyderabad | Feedback Portal
+    </div>
+
+</div>
+
+</body>
+</html>
